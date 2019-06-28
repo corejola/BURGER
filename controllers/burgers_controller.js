@@ -11,8 +11,11 @@ module.exports = function (app) {
 
     // For testing purposes - run get to show all burgers in the burgers table. 
     app.get("/", function (req, res) {
+        //what is dbBurger?
         db.Burger.findAll({}).then(function (dbBurger) {
-            res.render("index", dbBurger);
+            res.render("index", { dbBurger });
+            console.log("dbBurger: " + JSON.stringify(dbBurger))
+            // dbBurger is the database burger object, need to send this render into handlebars
         });
     });
 
@@ -27,7 +30,7 @@ module.exports = function (app) {
     });
 
     // Update - put to update the status of burger from devoured false, to devoured true
-    app.put("/api/burger", function (req, res) {
+    app.put("/api/burger/:id", function (req, res) {
         db.Burger.update({
             name: req.body.name,
             devoured: req.body.devoured

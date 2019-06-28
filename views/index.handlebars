@@ -3,7 +3,7 @@
 <h2>Input the burgers that you want to DEVOUR!</h2>
 
 <ul>
-    {{#each burgers}}
+    {{#each dbBurger}}
     {{#unless devoured}}
     {{> burgers/burger-block devoured=true}}
     {{/unless}}
@@ -13,7 +13,7 @@
 <h2>Burgers!</h2>
 
 <ul>
-    {{#each burgers}}
+    {{#each dbBurger}}
     {{#if devoured}}
     {{> burgers/burger-block devoured=false}}
     {{/if}}
