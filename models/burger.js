@@ -1,26 +1,17 @@
-// Import ORM
-var orm = require('../config/orm.js');
-
-// create burgers model using ORM
-
-var burger = {
-
-    all: function () {
-        // orm.all("burgers", function (res){
-        //     cb(res);
-        // });
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Burger = sequelize.define('Burger', {
+    // include data validation
+    name: {
+      type: DataTypes.TEXT,
+      validaite: {
+        notNull: true
+      }
     },
-
-    create: function () {
-        // orm.create("burgers", function(res){
-        //     cb(res);
-        // })
-    },
-
-    update: function () {
-        // orm.update("burgers", function(res){
-        //     cb(res)
-        // });
-    }
-
+    devoured: DataTypes.BOOLEAN
+  }, {});
+  Burger.associate = function (models) {
+    // associations can be defined here
+  };
+  return Burger;
 };
