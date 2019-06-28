@@ -12,3 +12,6 @@ SET devoured = true
 WHERE id = 1;
 
 -- using req.body.(button id# tag)
+
+-- Sequilize CLI First Model
+    -- npx sequelize-cli model:generate --name Burger --attributes ame:text,devoured:boolean
