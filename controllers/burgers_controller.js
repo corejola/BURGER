@@ -10,9 +10,9 @@ module.exports = function (app) {
     // Burgers CRUD Operations
 
     // For testing purposes - run get to show all burgers in the burgers table. 
-    app.get("/api/burger", function (req, res) {
+    app.get("/", function (req, res) {
         db.Burger.findAll({}).then(function (dbBurger) {
-            res.json(dbBurger);
+            res.render("index", dbBurger);
         });
     });
 
