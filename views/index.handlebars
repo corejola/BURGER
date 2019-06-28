@@ -1,19 +1,20 @@
 <h1>Burgers!</h1>
 
 <h2>Input the burgers that you want to DEVOUR!</h2>
+<h2> Your Burgers!</h2>
 
 <ul>
-    {{#each dbBurger}}
+    {{#each data}}
     {{#unless devoured}}
     {{> burgers/burger-block devoured=true}}
     {{/unless}}
     {{/each}}
 </ul>
 
-<h2>Burgers!</h2>
+
 
 <ul>
-    {{#each dbBurger}}
+    {{#each data}}
     {{#if devoured}}
     {{> burgers/burger-block devoured=false}}
     {{/if}}
