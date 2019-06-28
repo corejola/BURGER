@@ -2,12 +2,13 @@
 module.exports = (sequelize, DataTypes) => {
   const Burger = sequelize.define('Burger', {
     // include data validation
-    name: {
-      type: DataTypes.TEXT,
-      validaite: {
-        notNull: true
-      }
-    },
+    name: DataTypes.STRING,
+    // {
+    //   type: DataTypes.STRING
+    //   validate: {
+    //     notNull: true
+    //   }
+    // },
     devoured: DataTypes.BOOLEAN
   }, {});
   Burger.associate = function (models) {

@@ -3,6 +3,7 @@
 CREATE DATABASE burgers_db;
 USE burgers_db;
 
+-- Used Sequelize CLI to create schema - see "../models"
 CREATE TABLE burgers
 (
     id int NOT NULL

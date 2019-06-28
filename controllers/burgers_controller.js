@@ -19,7 +19,7 @@ module.exports = function (app) {
     // Create - post to the database
     app.post("/api/burger", function (req, res) {
         db.Burger.create({
-            name: req.body.text,
+            name: req.body.name,
             devoured: false
         }).then(function (dbBurger) {
             res.json(dbBurger);
@@ -29,8 +29,8 @@ module.exports = function (app) {
     // Update - put to update the status of burger from devoured false, to devoured true
     app.put("/api/burger", function (req, res) {
         db.Burger.update({
-            name: req.body.text,
-            complete: req.body.complete
+            name: req.body.name,
+            devoured: req.body.devoured
         }, {
                 where: {
                     id: req.body.id
