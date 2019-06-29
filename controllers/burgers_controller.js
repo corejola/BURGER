@@ -51,7 +51,7 @@ module.exports = function (app) {
 
     // Delete - post to the database
     app.delete("/api/burger/:id", function (req, res) {
-        db.Author.destroy({
+        db.Burger.destroy({
             where: {
                 id: req.params.id
             }
