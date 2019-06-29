@@ -3,20 +3,28 @@
 
 $(function () {
     $(".change-devourment").on("click", function (event) {
-        var id = $(this).data("id");
+        var id = $(this).attr("data-burger-id");
         var newDevoured = $(this).data("newdevoured");
-
-        var newBurgerState = {
-            devoured: newDevoured
-        };
-
+        console.log("data: " + newDevoured)
+        var newBurgerState = {}
+        if (!newDevoured) {
+            newBurgerState = {
+                devoured: true
+            };
+        } else {
+            newBurgerState = {
+                devoured: false
+            };
+        }
+        console.log(newBurgerState)
+        console.log("ID: " + id)
         // Send the PUT request.
         $.ajax("/api/burger/" + id, {
             type: "PUT",
             data: newBurgerState
         }).then(
             function () {
-                console.log("changed sleep to", newDevoured);
+                console.log("changed devourment to", newDevoured);
                 // Reload the page to get the updated list
                 location.reload();
             }
@@ -45,11 +53,8 @@ $(function () {
 
     // Send the DELETE request.
     $(".delete-burger").on("click", function (event) {
-
-        // var id = $(this).data("id");
         var id = $(this).attr("data-burger-id")
-        console.log("ID = " + id);
-
+        // console.log("ID = " + id);
         $.ajax("/api/burger/" + id, {
             type: "DELETE"
         }).then(

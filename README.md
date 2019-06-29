@@ -30,7 +30,7 @@ Week 14  HW- Node Express Handlebars
  
 
 #### VIEW: 
-1. Handlebar HTML template handles the data coming back from the burgers table and passes it into the HTML
+1. Handlebar HTML template handles the data coming back from the burgers table and passes it into the HTML  
 
 #### CONTROLER:
 1. Controller to handle the "where" & the "what 
