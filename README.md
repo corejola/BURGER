@@ -30,19 +30,16 @@ Week 14  HW- Node Express Handlebars
  
 
 #### VIEW: 
-
+1. Handlebar HTML template handles the data coming back from the burgers table and passes it into the HTML
 
 #### CONTROLER:
 1. Controller to handle the "where" & the "what 
 2. burgers_controller.js requires the Burger Model peforms the CRUD operations
 3. API routes are established within the controller
     * `app.get("/")` peforms a `db.Burger.findAll` using sequelize synatx to retrive all items from the burgers_db
-    * `app.post("/api/burger")`
-        `db.Burger.create`
-    * `app.put("/api/burger/:id")`
-        `db.Burger.update`
-    * `app.delete("/api/burger/:id")`
-        `db.Burger.destroy`
+    * `app.post("/api/burger")`to add a new burger to the burgers table via the HTML AJAX using & sequelize `db.Burger.create` method.
+    * `app.put("/api/burger/:id")` uses the data-attribute data-burger-id to associate the button to the buger from the bugers table inorder to update the devoured boolean using the `db.Burger.update` method
+    * `app.delete("/api/burger/:id")` uses the data-attribute data-burger-id to associate the button to the buger from the bugers table in order to use the sequelize `db.Burger.destroy` method.
 
 ## Node Packages used:
 - [Express](https://www.npmjs.com/package/express)

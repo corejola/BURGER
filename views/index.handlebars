@@ -6,22 +6,45 @@
 <div>
     <h3>To Be Eaten!</h3>
     <ul>
+
         {{#each dbBurger}}
         {{#unless devoured}}
-        {{> burgers/burger-block devoured=true}}
+
+        <li>
+            {{name}}
+            {{!-- {{> burgers/burger-block devoured=true}} --}}
+            <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
+                {{#if devoured}}Devoured!{{else}}Regurgitate!{{/if}}
+            </button>
+            <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
+        </li>
+
         {{/unless}}
         {{/each}}
+
     </ul>
 </div>
 
 <div>
     <h3>Burgers Devoured!</h3>
     <ul>
+
         {{#each dbBurger}}
         {{#if devoured}}
-        {{> burgers/burger-block devoured=false}}
+
+        <li>
+            {{name}}
+            {{!-- {{> burgers/burger-block devoured=false}} --}}
+            <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
+                {{#if devoured}}Devoured!{{else}}Regurgitate!{{/if}}
+            </button>
+
+            <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
+        </li>
+
         {{/if}}
         {{/each}}
+
     </ul>
 
 </div>
