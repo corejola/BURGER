@@ -1,61 +1,71 @@
-<h1>Burgers!</h1>
+<div class="container">
+    <h1>Burgers!</h1>
 
-<h2>Input the burgers that you want to DEVOUR!</h2>
-<h2> Your Burgers!</h2>
+    <div class="tenor-gif-embed justify-content-center" data-postid="9912299" data-share-method="host" data-width="25%"
+        data-aspect-ratio="1.0"><a href="https://tenor.com/view/burger-gif-9912299">Burger Food GIF</a> from <a
+            href="https://tenor.com/search/burger-gifs">Burger GIFs</a></div>
 
-<div>
-    <h3>To Be Eaten!</h3>
-    <ul>
+    <h2>Input the burgers that you want to DEVOUR!</h2>
+    <h2> Your Burgers!</h2>
+    <br>
+    <div>
 
-        {{#each dbBurger}}
-        {{#unless devoured}}
+        <div class="row">
+            <div class="col-6">
+                <h3>To Be Eaten!</h3>
+                <ul>
 
-        <li>
-            {{name}}
-            {{!-- {{> burgers/burger-block devoured=true}} --}}
-            <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
-                {{#if devoured}}Regurgitate!{{else}}Devoured!{{/if}}
-            </button>
-            <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
-        </li>
+                    {{#each dbBurger}}
+                    {{#unless devoured}}
 
-        {{/unless}}
-        {{/each}}
+                    <li>
+                        {{name}}
+                        {{!-- {{> burgers/burger-block devoured=true}} --}}
+                        <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
+                            {{#if devoured}}Regurgitate!{{else}}Devoured!{{/if}}
+                        </button>
+                        <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
+                    </li>
 
-    </ul>
-</div>
+                    {{/unless}}
+                    {{/each}}
 
-<div>
-    <h3>Burgers Devoured!</h3>
-    <ul>
+                </ul>
+            </div>
 
-        {{#each dbBurger}}
-        {{#if devoured}}
+            <div class="col-6">
+                <h3>Burgers Devoured!</h3>
+                <ul>
 
-        <li>
-            {{name}}
-            {{!-- {{> burgers/burger-block devoured=false}} --}}
-            <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
-                {{#if devoured}}Regurgitate!{{else}}Devoured!{{/if}}
-            </button>
+                    {{#each dbBurger}}
+                    {{#if devoured}}
 
-            <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
-        </li>
+                    <li>
+                        {{name}}
+                        {{!-- {{> burgers/burger-block devoured=false}} --}}
+                        <button class="change-devourment" data-burger-id="{{id}}" data-newdevoured="{{devoured}}">
+                            {{#if devoured}}Regurgitate!{{else}}Devoured!{{/if}}
+                        </button>
 
-        {{/if}}
-        {{/each}}
+                        <button class="delete-burger" data-burger-id="{{id}}">DELETE!</button>
+                    </li>
 
-    </ul>
+                    {{/if}}
+                    {{/each}}
 
-</div>
+                </ul>
 
-<h2>Add a Burger</h2>
-<form class="create-form">
+            </div>
+        </div>
+        <h2>Add a Burger</h2>
+        <form class="create-form">
 
-    <div class="form-group">
-        <label for="ca">Burger Name:</label>
-        <input type="text" id="ca" name="name">
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+            </div>
+
+            <button type="submit">Add Burger</button>
+        </form>
     </div>
-
-    <button type="submit">Add Burger</button>
-</form>
+</div>
