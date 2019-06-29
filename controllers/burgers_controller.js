@@ -9,17 +9,26 @@ var db = require("../models")
 module.exports = function (app) {
     // Burgers CRUD Operations
 
-    // For testing purposes - run get to show all burgers in the burgers table. 
-    app.get("/api/burger", function (req, res) {
+    // For TESTING purposes - run get to show all burgers in the burgers table. 
+    app.get("/api/allBurgers", function (req, res) {
         db.Burger.findAll({}).then(function (dbBurger) {
             res.json(dbBurger);
         });
     });
 
+    app.get("/", function (req, res) {
+        //what is dbBurger? - response from sequelize find all, provideds the information from the burgers_db as a JSON object.
+        db.Burger.findAll({}).then(function (dbBurger) {
+            res.render("index", { dbBurger });
+            // dbBurger is the database burger object, need to send this render into handlebars
+        });
+    });
+
     // Create - post to the database
     app.post("/api/burger", function (req, res) {
+        console.log(req.body)
         db.Burger.create({
-            name: req.body.text,
+            name: req.body.name,
             devoured: false
         }).then(function (dbBurger) {
             res.json(dbBurger);
@@ -27,10 +36,10 @@ module.exports = function (app) {
     });
 
     // Update - put to update the status of burger from devoured false, to devoured true
-    app.put("/api/burger", function (req, res) {
+    app.put("/api/burger/:id", function (req, res) {
         db.Burger.update({
-            name: req.body.text,
-            complete: req.body.complete
+            // name: req.body.name,
+            devoured: req.body.devoured
         }, {
                 where: {
                     id: req.body.id

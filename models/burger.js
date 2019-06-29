@@ -3,9 +3,9 @@ module.exports = (sequelize, DataTypes) => {
   const Burger = sequelize.define('Burger', {
     // include data validation
     name: {
-      type: DataTypes.TEXT,
-      validaite: {
-        notNull: true
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true,
       }
     },
     devoured: DataTypes.BOOLEAN

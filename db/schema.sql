@@ -1,8 +1,9 @@
 -- Base schema for Eat-Da-Burger
-
+-- DROP DATABASE
 CREATE DATABASE burgers_db;
 USE burgers_db;
 
+-- Used Sequelize CLI to create schema - see "../models"
 CREATE TABLE burgers
 (
     id int NOT NULL
@@ -11,5 +12,5 @@ CREATE TABLE burgers
     (255) NOT NULL,
 	devoured BOOLEAN DEFAULT false,
 	PRIMARY KEY
-    (id)
+    (id)    
 );

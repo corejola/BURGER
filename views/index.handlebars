@@ -1,24 +1,30 @@
 <h1>Burgers!</h1>
 
 <h2>Input the burgers that you want to DEVOUR!</h2>
+<h2> Your Burgers!</h2>
 
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-</ul>
+<div>
+    <h3>To Be Eaten!</h3>
+    <ul>
+        {{#each dbBurger}}
+        {{#unless devoured}}
+        {{> burgers/burger-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
 
-<h2>Burgers!</h2>
+<div>
+    <h3>Burgers Devoured!</h3>
+    <ul>
+        {{#each dbBurger}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
+        {{/each}}
+    </ul>
 
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burger-block devoured=false}}
-    {{/if}}
-    {{/each}}
-</ul>
+</div>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
