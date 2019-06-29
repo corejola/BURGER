@@ -17,6 +17,7 @@ Week 14  HW- Node Express Handlebars
 
 ## Functionality (SEQUELIZE) - INCOMPLETE
 * see Pseudo Code Below
+![MVC-Sequelize](public/assets/Eat-Da-Burger-Sequelize.png)
 
 ### Pseudo Code:
 #### MODEL:
