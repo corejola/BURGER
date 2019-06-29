@@ -7,7 +7,6 @@
     <h3>To Be Eaten!</h3>
     <ul>
         {{#each dbBurger}}
-        {{name}}
         {{#unless devoured}}
         {{> burgers/burger-block devoured=true}}
         {{/unless}}
@@ -19,7 +18,6 @@
     <h3>Burgers Devoured!</h3>
     <ul>
         {{#each dbBurger}}
-        {{name}}
         {{#if devoured}}
         {{> burgers/burger-block devoured=false}}
         {{/if}}

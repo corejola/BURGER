@@ -30,7 +30,6 @@ $(function () {
         var newBurger = {
             name: $("#ca").val().trim(),
         };
-
         // Send the POST request.
         $.ajax("/api/burger", {
             type: "POST",
@@ -41,14 +40,15 @@ $(function () {
                 location.reload();
             }
         );
-        console.log("TEST: " + newBurger.name)
+        // console.log("TEST: " + newBurger.name)
     });
 
-
+    // Send the DELETE request.
     $(".delete-burger").on("click", function (event) {
+
         var id = $(this).data("id");
-        console.log(id);
-        // Send the DELETE request.
+        console.log(this + "__" + id);
+
         $.ajax("/api/burger/" + id, {
             type: "DELETE"
         }).then(

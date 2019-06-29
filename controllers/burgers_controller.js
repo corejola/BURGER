@@ -38,8 +38,7 @@ module.exports = function (app) {
     // Update - put to update the status of burger from devoured false, to devoured true
     app.put("/api/burger/:id", function (req, res) {
         db.Burger.update({
-
-            name: req.body.name,
+            // name: req.body.name,
             devoured: req.body.devoured
         }, {
                 where: {
