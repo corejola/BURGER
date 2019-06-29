@@ -37,12 +37,13 @@ module.exports = function (app) {
 
     // Update - put to update the status of burger from devoured false, to devoured true
     app.put("/api/burger/:id", function (req, res) {
+        console.log(req.params.id);
         db.Burger.update({
             // name: req.body.name,
             devoured: req.body.devoured
         }, {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }).then(function (dbBurger) {
                 res.json(dbBurger);
