@@ -1,5 +1,5 @@
 # EAT DA BURGER!!  🍔 
-Week 14  HW- Node Express Handlebars
+Week 14  HW- Node Express Handlebars (using Sequelize)
 ## Revised to SEQUELIZE
 
 [Heroku Deployment](TBD)
@@ -11,11 +11,9 @@ Week 14  HW- Node Express Handlebars
 2. You burgers will be displayed on the page.
 3. Once you have devoured a burger, hit the `devoured` button to remove it from the list and add it to the devoured list. 
 
-## Functionality (ORM)
+## Functionality (SEQUELIZE)
 1. Eat-Da-Burger application utilizes the MVC architecture to interface between the HTML page and the SQL burger database. 
-2. Object Relational Mapping `ORM` is utilized to create the SQL statement functions into an exportable object. 
-
-## Functionality (SEQUELIZE) - INCOMPLETE
+2. Sequelize is used as the Object Relational Mapping `ORM` tool for SQL. Sequelize creates the object models to interface with the MYSQL database. 
 ![MVC-Sequelize](public/assets/Eat-Da-Burger-Sequelize.png)
 * see Pseudo Code Below
 
