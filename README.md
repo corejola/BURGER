@@ -2,6 +2,7 @@
 Week 14  HW- Node Express Handlebars (using Sequelize)
 ## Revised to SEQUELIZE
 ![Eat-Da-Burger](https://giphy.com/gifs/SVrCHKBFmGUEWCMxzy/html5)
+
 ![Heroku Deployment](https://damp-wildwood-92591.herokuapp.com/)
  ! add burger emoji
 
