@@ -1,8 +1,8 @@
 # EAT DA BURGER!!  🍔 
 Week 14  HW- Node Express Handlebars (using Sequelize)
 ## Revised to SEQUELIZE
-
-[Heroku Deployment](TBD)
+![Eat-Da-Burger](https://giphy.com/gifs/SVrCHKBFmGUEWCMxzy/html5)
+![Heroku Deployment](https://damp-wildwood-92591.herokuapp.com/)
  ! add burger emoji
 
 ## How to use the Eat-Da-Burger App
