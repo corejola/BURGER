@@ -9,12 +9,17 @@ var db = require("../models")
 module.exports = function (app) {
     // Burgers CRUD Operations
 
-    // For testing purposes - run get to show all burgers in the burgers table. 
+    // For TESTING purposes - run get to show all burgers in the burgers table. 
+    app.get("/api/allBurgers", function (req, res) {
+        db.Burger.findAll({}).then(function (dbBurger) {
+            res.json(dbBurger);
+        });
+    });
+
     app.get("/", function (req, res) {
-        //what is dbBurger?
-        db.Burger.findAll({}).then(function (data) {
-            res.render("index", { data });
-            console.log("dbBurger: " + data)
+        //what is dbBurger? - response from sequelize find all, provideds the information from the burgers_db as a JSON object.
+        db.Burger.findAll({}).then(function (dbBurger) {
+            res.render("index", { dbBurger });
             // dbBurger is the database burger object, need to send this render into handlebars
         });
     });

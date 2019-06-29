@@ -1,5 +1,5 @@
 -- Base schema for Eat-Da-Burger
-
+-- DROP DATABASE
 CREATE DATABASE burgers_db;
 USE burgers_db;
 
